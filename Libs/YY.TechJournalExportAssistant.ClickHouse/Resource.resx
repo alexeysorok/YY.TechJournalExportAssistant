@@ -135,6 +135,7 @@
     ApplicationName LowCardinality(String),
     ClientId Int64 Codec(DoubleDelta, LZ4),
     ComputerName LowCardinality(String),
+    SourceServerName LowCardinality(String),
     ConnectionId Int64 Codec(DoubleDelta, LZ4),
     UserName LowCardinality(String),
     ApplicationId Int64 Codec(DoubleDelta, LZ4),

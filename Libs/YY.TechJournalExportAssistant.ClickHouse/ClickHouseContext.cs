@@ -50,6 +50,7 @@ namespace YY.TechJournalExportAssistant.ClickHouse
             List<object[]> rowsForInsert = new List<object[]>();
             List<object[]> positionsForInsert = new List<object[]>();
             Dictionary<string, LastRowsInfoByLogFile> maxPeriodByDirectories = new Dictionary<string, LastRowsInfoByLogFile>();
+            string sourceServerName = Environment.MachineName;
 
             var dataFromBuffer = sourceDataFromBuffer
                 .OrderBy(i => i.Key.Period)
@@ -118,6 +119,8 @@ namespace YY.TechJournalExportAssistant.ClickHouse
                             eventItem.ApplicationName ?? string.Empty,
                             eventItem.ClientId ?? 0,
                             eventItem.ComputerName ?? string.Empty,
+                            // add Source Server Name
+                            sourceServerName ?? string.Empty,
                             eventItem.ConnectionId ?? 0,
                             eventItem.UserName ?? string.Empty,
                             eventItem.ApplicationId ?? 0,

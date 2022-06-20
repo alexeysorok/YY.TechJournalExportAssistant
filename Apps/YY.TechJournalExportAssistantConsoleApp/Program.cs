@@ -22,6 +22,8 @@ namespace YY.TechJournalExportAssistantConsoleApp
 
         static void Main(string[] args)
         {
+
+            #region Configuration
             IConfiguration Configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .Build();
@@ -56,6 +58,8 @@ namespace YY.TechJournalExportAssistantConsoleApp
 
             Console.WriteLine();
             Console.WriteLine();
+
+            #endregion
 
             while (true)
             {

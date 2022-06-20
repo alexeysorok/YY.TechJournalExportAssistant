@@ -67,6 +67,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigSamples", "ConfigSamp
 		Docs\ConfigSamples\Сбор данных полностью выключен.xml = Docs\ConfigSamples\Сбор данных полностью выключен.xml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1C.LogExporter", "YY.TechJournalExportAssistantService\1C.LogExporter.csproj", "{601935A9-87F9-42A3-9D61-BA20AA4D6C19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{75DDC845-838D-4F33-914B-2D833179A463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75DDC845-838D-4F33-914B-2D833179A463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75DDC845-838D-4F33-914B-2D833179A463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601935A9-87F9-42A3-9D61-BA20AA4D6C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601935A9-87F9-42A3-9D61-BA20AA4D6C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601935A9-87F9-42A3-9D61-BA20AA4D6C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601935A9-87F9-42A3-9D61-BA20AA4D6C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{84CA9869-EBD1-4DF4-A5FB-415A9B0FE58B} = {300AD5BD-47CB-4AA8-B823-9B061C7654D1}
 		{4827F904-3221-4AF4-9B9E-87E524B3A257} = {84CA9869-EBD1-4DF4-A5FB-415A9B0FE58B}
 		{DBDDB559-BC3C-4316-BF36-627FFA394ECB} = {84CA9869-EBD1-4DF4-A5FB-415A9B0FE58B}
+		{601935A9-87F9-42A3-9D61-BA20AA4D6C19} = {81F37230-D7FE-4190-A939-B5AE8A71494B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3DABD43-6E3B-4871-B426-2C4BDD6018CC}

@@ -51,6 +51,7 @@ namespace YY.TechJournalExportAssistant.ClickHouse
             List<object[]> positionsForInsert = new List<object[]>();
             Dictionary<string, LastRowsInfoByLogFile> maxPeriodByDirectories = new Dictionary<string, LastRowsInfoByLogFile>();
             string sourceServerName = Environment.MachineName;
+            //string techJournalDatabase = _connection.Database;
 
             var dataFromBuffer = sourceDataFromBuffer
                 .OrderBy(i => i.Key.Period)
@@ -104,6 +105,8 @@ namespace YY.TechJournalExportAssistant.ClickHouse
                     var eventItem = rowData.Value;
                     rowsForInsert.Add(new object[]
                         {
+                            // add name TechJournalDatabase
+                            //techJournalDatabase,
                             dataItem.Key.Settings.TechJournalLog.Name,
                             logFileInfo.Directory?.Name ?? string.Empty,
                             logFileInfo.Name,
@@ -141,7 +144,7 @@ namespace YY.TechJournalExportAssistant.ClickHouse
                             eventItem.Description ?? string.Empty,
                             eventItem.Message ?? string.Empty,
                             eventItem.GetCustomFieldsAsJSON() ?? string.Empty
-                        });
+                        }); 
                 }
             }
 

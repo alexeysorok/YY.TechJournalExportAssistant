@@ -50,7 +50,7 @@ namespace YY.TechJournalExportAssistant.ClickHouse.Helpers
             ExecNonReaderQuery(connectionSettings, $"DROP DATABASE IF EXISTS {databaseName}");
         }
         
-        private static string GetDatabaseName(string connectionSettings, out string paramName, out string paramValue)
+        public static string GetDatabaseName(string connectionSettings, out string paramName, out string paramValue)
         {
             var connectionParams = GetConnectionParams(connectionSettings);
             var databaseParam = connectionParams.FirstOrDefault(e => e.Key.ToUpper() == "DATABASE");

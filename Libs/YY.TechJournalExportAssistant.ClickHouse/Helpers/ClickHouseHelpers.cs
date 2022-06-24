@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using ClickHouse.Client.ADO;
@@ -85,9 +86,21 @@ namespace YY.TechJournalExportAssistant.ClickHouse.Helpers
                         }
                         catch (Exception exception)
                         {
-                            Console.WriteLine(exception.Message);
+                            Console.WriteLine($"Дата: {DateTime.Now}" + $" Error info: {exception.Message}");
+
+                            var line = $"Дата: {DateTime.Now}" + $" Error info: {exception.Message}";
                             Thread.Sleep(15000);
-                           
+
+                            var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+
+                         
+                            string fullpath = Path.Combine(directoryPath, "log_err.txt");
+
+
+
+                            // write info date send
+                            using StreamWriter file = new StreamWriter(fullpath, append: true);
+                            file.WriteLine(line);
 
                         }
                         

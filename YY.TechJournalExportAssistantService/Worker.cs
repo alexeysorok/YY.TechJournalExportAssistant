@@ -89,6 +89,10 @@ namespace YY.TechJournalExportAssistantService
             // debug file look
             //Console.WriteLine(fullpath);
 
+            // wrote info date send
+            using StreamWriter file = new(fullpath, append: true);
+            file.WriteLine(line);
+
 
             long length_path = 0;
 
@@ -106,11 +110,7 @@ namespace YY.TechJournalExportAssistantService
 
             }
             
-            else { 
-
-            using StreamWriter file = new(fullpath, append: true);
-            file.WriteLine(line);
-            }
+            
 
 
 

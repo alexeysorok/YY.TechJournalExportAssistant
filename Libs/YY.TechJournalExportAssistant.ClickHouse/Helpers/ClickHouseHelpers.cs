@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using ClickHouse.Client.ADO;
 using ClickHouse.Client.ADO.Parameters;
 
@@ -73,10 +74,55 @@ namespace YY.TechJournalExportAssistant.ClickHouse.Helpers
                 );
                 using (var defaultConnection = new ClickHouseConnection(connectionStringDefault))
                 {
-                    defaultConnection.Open();
+                    //var state = defaultConnection.State;
+
+                    while (defaultConnection.State != ConnectionState.Open)
+                    {
+                        try
+                        {
+                            defaultConnection.Open();
+
+                        }
+                        catch (Exception exception)
+                        {
+                            Console.WriteLine(exception.Message);
+                            Thread.Sleep(15000);
+                           
+
+                        }
+                        
+                    }
+
                     var cmdDefault = defaultConnection.CreateCommand();
                     cmdDefault.CommandText = commandTest;
-                    cmdDefault.ExecuteNonQuery();
+
+
+
+                    try
+                    {
+                        cmdDefault.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
             }
         }

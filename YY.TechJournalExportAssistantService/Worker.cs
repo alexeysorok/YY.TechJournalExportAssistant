@@ -93,22 +93,7 @@ namespace YY.TechJournalExportAssistantService
             using StreamWriter file = new(fullpath, append: true);
             file.WriteLine(line);
 
-
-            long length_path = 0;
-
-            if (File.Exists(fullpath))
-            {
-
-                // size bytes 
-                length_path = new System.IO.FileInfo(fullpath).Length;
-                var lenght_path_mb = length_path / 1024 / 1024;
-                if (lenght_path_mb >= 1)
-                {
-                    Console.WriteLine("File deleted");
-                    File.Delete(fullpath);
-                }
-
-            }
+            
             
             
 
